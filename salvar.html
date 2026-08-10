@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerador de produtos.json</title>
+
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>Gerador de produtos.json</h1>
+
+    <p>
+        Preencha os campos abaixo e gere um novo arquivo 
+        <strong>produtos.json</strong>.
+    </p>
+
+</header>
+
+
+
+<main>
+
+
+    <!-- =========================
+         PRODUTOS
+    ========================== -->
+
+
+    <section class="bloco">
+
+
+        <h2>📦 Produtos</h2>
+
+
+        <div id="produtos"></div>
+
+
+    </section>
+
+
+
+
+    <!-- =========================
+         JORNAL
+    ========================== -->
+
+
+    <section class="bloco">
+
+
+        <h2>📰 Jornal</h2>
+
+
+
+        <div class="campo">
+
+
+            <label>Página Frente</label>
+
+
+            <input
+            type="text"
+            id="pagfrente"
+            placeholder="Cole uma URL ou escolha uma imagem">
+
+
+            <input
+            type="file"
+            id="filePagFrente"
+            accept="image/*">
+
+
+        </div>
+
+
+
+
+        <div class="campo">
+
+
+            <label>Página Verso</label>
+
+
+            <input
+            type="text"
+            id="pagverso"
+            placeholder="Cole uma URL ou escolha uma imagem">
+
+
+            <input
+            type="file"
+            id="filePagVerso"
+            accept="image/*">
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <!-- =========================
+         PRODUTO DESTAQUE
+    ========================== -->
+
+
+    <section class="bloco">
+
+
+        <h2>⭐ Produto Destaque</h2>
+
+
+
+
+        <div class="campo">
+
+
+            <label>Imagem</label>
+
+
+            <input
+            type="text"
+            id="imgDestaque"
+            placeholder="Cole uma URL ou Base64">
+
+
+            <input
+            type="file"
+            id="fileImgDestaque"
+            accept="image/*">
+
+
+        </div>
+
+
+
+
+
+        <div class="campo">
+
+
+            <label>Nome</label>
+
+
+            <input
+            type="text"
+            id="nomeDestaque">
+
+
+        </div>
+
+
+
+
+
+        <div class="campo">
+
+
+            <label>Descrição</label>
+
+
+            <textarea
+            id="descricaoDestaque"
+            rows="5"></textarea>
+
+
+        </div>
+
+
+
+
+
+        <div class="campo">
+
+
+            <label>Valor</label>
+
+
+            <input
+            type="text"
+            id="valorDestaque">
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+
+    <!-- =========================
+         BOTÕES
+    ========================== -->
+
+
+    <section class="botoes">
+
+
+        <input
+        type="file"
+        id="abrirJson"
+        accept=".json">
+
+
+
+        <button id="btnGerar">
+
+            💾 Gerar produtos.json
+
+        </button>
+
+
+
+    </section>
+
+
+
+</main>
+
+
+
+
+<script src="apl.js"></script>
+
+
+</body>
+
+</html>
