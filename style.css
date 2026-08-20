@@ -1,0 +1,1415 @@
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   VARIÁVEIS
+========================================================== */
+
+:root {
+
+    --azul: #0D57C7;
+    --azul-escuro: #08449c;
+    --azul-claro: #eef5ff;
+
+    --fundo: #f5f7fb;
+    --branco: #ffffff;
+
+    --texto: #20252b;
+    --texto-secundario: #6b7280;
+
+    --borda: #e5e7eb;
+
+    --vermelho: #dc3545;
+    --vermelho-claro: #fff1f2;
+
+    --sombra:
+        0 8px 30px rgba(15, 23, 42, .06);
+
+}
+
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8faff 0%,
+            #f4f6fa 100%
+        );
+
+    color: var(--texto);
+
+    min-height: 100vh;
+
+}
+
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
+
+body > header {
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, .12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #0D57C7 0%,
+            #08449C 55%,
+            #06377F 100%
+        );
+
+    color: #fff;
+
+    padding: 42px 20px 38px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(13, 87, 199, .22);
+
+}
+
+
+/* Brilho decorativo */
+
+body > header::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    top: -160px;
+    right: -80px;
+
+    background: rgba(255, 255, 255, .08);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+/* Segundo detalhe */
+
+body > header::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    bottom: -130px;
+    left: -70px;
+
+    background: rgba(255, 255, 255, .05);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+/* ==========================================================
+   TÍTULO
+========================================================== */
+
+header h1 {
+
+    position: relative;
+    z-index: 1;
+
+    font-size: clamp(25px, 4vw, 32px);
+
+    font-weight: 750;
+
+    letter-spacing: -.5px;
+
+    margin: 0 0 12px;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, .15);
+
+}
+
+
+/* Linha decorativa abaixo do título */
+
+header h1::after {
+
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    margin: 12px auto 0;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, .85);
+
+}
+
+
+/* ==========================================================
+   DESCRIÇÃO
+========================================================== */
+
+header p {
+
+    position: relative;
+    z-index: 1;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    font-weight: 400;
+
+    color: rgba(255, 255, 255, .88);
+
+}
+
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media (max-width: 600px) {
+
+    body > header {
+
+        padding: 32px 18px 30px;
+
+    }
+
+    header h1 {
+
+        font-size: 24px;
+
+    }
+
+    header p {
+
+        font-size: 14px;
+
+    }
+
+}
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+main.container {
+
+    width: min(
+        1180px,
+        calc(100% - 40px)
+    );
+
+    margin: 35px auto 70px;
+
+}
+
+
+/* ==========================================================
+   BLOCOS
+========================================================== */
+
+main > .bloco {
+
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+    margin-bottom: 18px;
+
+    overflow: hidden;
+
+    box-shadow: var(--sombra);
+
+    transition: .25s ease;
+
+}
+
+
+main > .bloco:hover {
+
+    border-color: #d8e0eb;
+
+}
+
+
+/* ==========================================================
+   CABEÇALHO RECOLHÍVEL
+========================================================== */
+
+.bloco-toggle {
+
+    width: 100%;
+
+    min-height: 84px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 24px;
+
+    background: white;
+
+    border: none;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: .2s ease;
+
+}
+
+
+.bloco-toggle:hover {
+
+    background: #fbfdff;
+
+}
+
+
+/* ==========================================================
+   TEXTO DO CABEÇALHO
+========================================================== */
+
+.bloco-toggle-conteudo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    flex: 1;
+
+}
+
+
+.bloco-toggle h2 {
+
+    color: var(--texto);
+
+    font-size: 18px;
+
+    font-weight: 650;
+
+    margin: 0;
+
+    padding: 0;
+
+    border: none;
+
+    line-height: 1.3;
+
+}
+
+
+.bloco-toggle p {
+
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================================
+   SETA
+========================================================== */
+
+.bloco-seta {
+
+    width: 36px;
+
+    height: 36px;
+
+    min-width: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--azul-claro);
+
+    color: var(--azul);
+
+    font-size: 21px;
+
+    transition: .3s ease;
+
+}
+
+
+.bloco-toggle:hover .bloco-seta {
+
+    background: #e1edff;
+
+}
+
+
+.bloco.aberto .bloco-seta {
+
+    transform: rotate(180deg);
+
+    background: var(--azul);
+
+    color: white;
+
+}
+
+
+/* ==========================================================
+   CONTEÚDO DOS BLOCOS
+========================================================== */
+
+.bloco-conteudo {
+
+    display: none;
+
+    padding: 0 24px 26px;
+
+}
+
+
+.bloco.aberto .bloco-conteudo {
+
+    display: block;
+
+}
+
+
+/* ==========================================================
+   CAMPOS
+========================================================== */
+
+.campo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-bottom: 17px;
+
+}
+
+
+.campo label {
+
+    color: #374151;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================================
+   INPUTS
+========================================================== */
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    border: 1px solid #d9dee7;
+
+    background: #fff;
+
+    color: var(--texto);
+
+    border-radius: 10px;
+
+    padding: 12px 13px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+textarea {
+
+    resize: vertical;
+
+    min-height: 100px;
+
+    line-height: 1.5;
+
+}
+
+
+input::placeholder,
+textarea::placeholder {
+
+    color: #a0a7b2;
+
+}
+
+
+input:hover,
+textarea:hover,
+select:hover {
+
+    border-color: #c5ccd7;
+
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(13, 87, 199, .10);
+
+}
+
+
+/* ==========================================================
+   INPUT DE ARQUIVO
+========================================================== */
+
+input[type="file"] {
+
+    padding: 9px;
+
+    background: #f8fafc;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: 18px;
+
+}
+
+
+/* ==========================================================
+   CARD NORMAL
+========================================================== */
+
+.card {
+
+    background: #fafbfd;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.card h3 {
+
+    font-size: 16px;
+
+    color: var(--texto);
+
+    margin-bottom: 18px;
+
+}
+
+
+/* ==========================================================
+   PRODUTOS
+========================================================== */
+
+.categoria {
+
+    margin-top: 24px;
+
+    padding: 18px;
+
+    border: 1px solid #e8edf4;
+
+    border-radius: 14px;
+
+    background: #fbfcfe;
+
+}
+
+
+.categoria:first-child {
+
+    margin-top: 0;
+
+}
+
+
+.categoria-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.categoria-header h3 {
+
+    font-size: 15px;
+
+    font-weight: 650;
+
+    color: #303640;
+
+}
+
+
+/* ==========================================================
+   CARD DE PRODUTO
+========================================================== */
+
+.produto-card-editor {
+
+    background: white;
+
+    border: 1px solid #e3e7ed;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    transition: .2s ease;
+
+}
+
+
+.produto-card-editor:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #d3dce8;
+
+    box-shadow:
+        0 8px 20px
+        rgba(15, 23, 42, .07);
+
+}
+
+
+/* ==========================================================
+   DESTAQUES / RECEITAS / NOTÍCIAS
+========================================================== */
+
+.destaque-card-editor,
+.receita-card-editor,
+.noticia-card-editor,
+.clube-card-editor {
+
+    background: white;
+
+    border: 1px solid #e3e7ed;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    transition: .2s ease;
+
+}
+
+
+.destaque-card-editor:hover,
+.receita-card-editor:hover,
+.noticia-card-editor:hover,
+.clube-card-editor:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #d3dce8;
+
+    box-shadow:
+        0 8px 20px
+        rgba(15, 23, 42, .07);
+
+}
+
+
+/* ==========================================================
+   TOPO DOS CARDS
+========================================================== */
+
+.card-topo {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.card-topo h3 {
+
+    margin: 0;
+
+    font-size: 16px;
+
+    font-weight: 650;
+
+    color: #252a31;
+
+}
+
+
+/* ==========================================================
+   BOTÃO REMOVER
+========================================================== */
+
+.btn-remover {
+
+    background: var(--vermelho-claro);
+
+    color: var(--vermelho);
+
+    border: 1px solid #ffd5da;
+
+    padding: 8px 11px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+
+.btn-remover:hover {
+
+    background: var(--vermelho);
+
+    color: white;
+
+    transform: none;
+
+}
+
+
+/* ==========================================================
+   BOTÕES
+========================================================== */
+
+button {
+
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 11px 16px;
+
+    background: var(--azul);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+}
+
+
+button:hover {
+
+    background: var(--azul-escuro);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px
+        rgba(13, 87, 199, .18);
+
+}
+
+
+button:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* ==========================================================
+   BOTÃO ADICIONAR
+========================================================== */
+
+.btn-adicionar {
+
+    background: var(--azul-claro);
+
+    color: var(--azul);
+
+    border: 1px solid #d8e7ff;
+
+    padding: 9px 13px;
+
+    font-size: 12px;
+
+}
+
+
+.btn-adicionar:hover {
+
+    background: var(--azul);
+
+    color: white;
+
+}
+
+
+/* ==========================================================
+   CLUBE AVENIDA
+========================================================== */
+
+#clubeCardsEditor {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: 18px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.clube-cards-header {
+
+    margin:
+        25px 0 15px;
+
+    padding-bottom: 12px;
+
+    border-bottom:
+        1px solid #edf0f4;
+
+}
+
+
+.clube-cards-header h3 {
+
+    font-size: 15px;
+
+    color: #303640;
+
+    margin-bottom: 5px;
+
+}
+
+
+.clube-cards-header p {
+
+    font-size: 13px;
+
+    color: var(--texto-secundario);
+
+}
+
+
+/* ==========================================================
+   BOTÃO ADICIONAR CLUBE
+========================================================== */
+
+.btn-adicionar-clube {
+
+    margin-top: 5px;
+
+    background: var(--azul);
+
+}
+
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.status {
+
+    margin-top: 15px;
+
+    padding: 11px 13px;
+
+    border-radius: 9px;
+
+    background: #f5f8fc;
+
+    border: 1px solid #e6ebf2;
+
+    color: #667085;
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================================
+   AÇÕES
+========================================================== */
+
+.acoes {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* ==========================================================
+   BOTÃO FINAL
+========================================================== */
+
+.salvar-final {
+
+    padding: 20px;
+
+    text-align: center;
+
+}
+
+
+.salvar-final button {
+
+    min-width: 230px;
+
+    padding: 13px 22px;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    main.container {
+
+        width:
+            calc(100% - 24px);
+
+        margin-top: 20px;
+
+    }
+
+
+    body > header {
+
+        padding: 30px 16px;
+
+    }
+
+
+    header h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    header p {
+
+        font-size: 13px;
+
+    }
+
+
+    .bloco-toggle {
+
+        min-height: 72px;
+
+        padding: 17px;
+
+    }
+
+
+    .bloco-toggle h2 {
+
+        font-size: 16px;
+
+    }
+
+
+    .bloco-toggle p {
+
+        font-size: 12px;
+
+    }
+
+
+    .bloco-conteudo {
+
+        padding:
+            0 17px 20px;
+
+    }
+
+
+    .categoria {
+
+        padding: 14px;
+
+    }
+
+
+    .categoria-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .categoria-header .btn-adicionar {
+
+        width: 100%;
+
+    }
+
+
+    .cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    #clubeCardsEditor {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .card-topo {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .btn-remover {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   ANIMAÇÃO SUAVE
+========================================================== */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-5px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+.bloco.aberto .bloco-conteudo {
+
+    animation:
+        aparecer .2s ease;
+
+}
+
+/* ==========================================================
+   ETIQUETA ACIMA DAS SECTIONS
+========================================================== */
+
+main > .bloco {
+    position: relative;
+    margin-top: 42px;
+}
+
+
+/* Texto acima do card */
+
+main > .bloco::before {
+
+    content: attr(data-label);
+
+    position: absolute;
+
+    top: -28px;
+
+    left: 6px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+
+    color: #7b8491;
+
+}
+
+
+/* Primeiro card não precisa ficar tão distante */
+
+main > .bloco:first-child {
+
+    margin-top: 15px;
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    main > .bloco {
+
+        margin-top: 38px;
+
+    }
+
+    main > .bloco::before {
+
+        left: 4px;
+
+        font-size: 10px;
+
+    }
+
+}
+/* =========================================================
+   IDENTIFICAÇÃO DA SECTION
+========================================================= */
+
+.section-identificacao {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 32px auto 10px;
+
+    padding-left: 8px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.2px;
+
+    color: #7b8794;
+
+}
+
+
+/* =========================================================
+   PRIMEIRA IDENTIFICAÇÃO
+========================================================= */
+
+main > .section-identificacao:first-child {
+
+    margin-top: 0;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .section-identificacao {
+
+        margin-top: 25px;
+
+        margin-bottom: 8px;
+
+        padding-left: 4px;
+
+        font-size: 11px;
+
+    }
+
+}   
+
+
+/* ==========================================================
+   BOTÃO ADICIONAR DA SECTION
+   Fica abaixo do texto, no lado esquerdo
+========================================================== */
+
+main > .bloco {
+    position: relative;
+}
+
+
+/* Área do cabeçalho */
+
+.bloco-toggle {
+
+    position: relative;
+
+    min-height: 105px;
+
+    padding: 20px 70px 20px 24px;
+
+}
+
+
+/* Texto */
+
+.bloco-toggle-conteudo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+
+}
+
+
+/* Botão adicionar */
+
+main > .bloco > .btn-adicionar,
+main > .bloco > .botao-header-section {
+
+    position: absolute;
+
+    left: 24px;
+
+    top: 67px;
+
+    z-index: 10;
+
+    margin: 0;
+
+    padding: 7px 11px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+}
+
+
+/* ==========================================================
+   SETA
+========================================================== */
+
+.bloco-toggle > .bloco-seta {
+
+    position: absolute;
+
+    right: 24px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+}
+
+
+/* Section aberta */
+
+.bloco.aberto .bloco-toggle > .bloco-seta {
+
+    transform:
+        translateY(-50%)
+        rotate(180deg);
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .bloco-toggle {
+
+        min-height: 100px;
+
+        padding: 17px 58px 17px 17px;
+
+    }
+
+
+    main > .bloco > .btn-adicionar,
+    main > .bloco > .botao-header-section {
+
+        left: 17px;
+
+        top: 63px;
+
+        padding: 7px 10px;
+
+        font-size: 11px;
+
+    }
+
+
+    .bloco-toggle > .bloco-seta {
+
+        right: 17px;
+
+    }
+
+}
+
+.boto{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+}
